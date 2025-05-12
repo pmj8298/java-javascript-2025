@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+      }
+      tr,
+      td {
+        border: 2px solid rgb(0, 0, 0);
+        padding: 10px;
+        background-color: rgb(215, 250, 250);
+        text-align: center;
+      }
+      tr:nth-of-type(odd) td {
+        background-color: lightblue;
+      }
+    </style>
+    <script>
+      const inp = prompt("원하는 값을 입력하세요.");
+
+      const list = ` <table>
+      <tr'>
+        <td colspan=2>${inp}단</td>
+      </tr>
+      <tr>
+        <td>${inp} X 1</td>
+        <td>${inp * 1}</td>
+      </tr>
+      <tr>
+        <td>${inp} X 2</td>
+        <td>${inp * 2}</td>
+      </tr>
+      <tr>
+        <td>${inp} X 3</td>
+        <td>${inp * 3}</td>
+      </tr>
+      <tr>
+        <td>${inp} X 4</td>
+        <td>${inp * 4}</td>
+      </tr>
+      <tr>
+        <td>${inp} X 5</td>
+        <td>${inp * 5}</td>
+      </tr>
+      <tr>
+        <td>${inp} X 6</td>
+        <td>${inp * 6}</td>
+      </tr>
+      <tr>
+        <td>${inp} X 7</td>
+        <td>${inp * 7}</td>
+      </tr>
+      <tr>
+        <td>${inp} X 8</td>
+        <td>${inp * 8}</td>
+      </tr>
+      <tr>
+        <td>${inp} X 9</td>
+        <td>${inp * 9}</td>
+      </tr>
+    </table>`;
+      // console.log(list);
+      document.write(list);
+    </script>
+  </head>
+  <body></body>
+</html>

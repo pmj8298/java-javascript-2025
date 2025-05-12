@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      tr,
+      td {
+        border: 2px solid darkblue;
+      }
+    </style>
+    <script>
+      const inp1 = prompt("원하는 값을 입력하세요.");
+      const inp2 = prompt("원하는 값을 입력하세요.");
+      const inp3 = prompt("원하는 값을 입력하세요.");
+      const inp4 = prompt("원하는 값을 입력하세요.");
+      // const list = "<h1>입력하신 값은 " + inp + " 입니다.</h1>";
+      const list =
+        `<table border="1">
+      <tr>
+        <td>` +
+        inp1 +
+        `</td>
+        <td>${inp2}</td>
+        <td>${inp3}</td>
+        <td>${inp4}</td>
+      </tr>
+      <tr>
+      <td>김</td>
+      <td>밥</td>
+      <td>콩</td>
+      <td>국</td>
+    </tr>
+    </table>`;
+      // console.log(list);
+      document.write(list);
+    </script>
+  </head>
+  <body></body>
+</html>

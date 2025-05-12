@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const str1 = "가나다";
+      const str2 = "라마";
+      const str3 = "바사아";
+      const str4 = "자차카타";
+      const str5 = "파하";
+      const str = str1 + str2 + str3 + str4 + str5;
+      console.log(str); // 가나다라마바사아자차카타파하
+      const strInd = str[8] + str[9] + str[3] + str[5] + str[11];
+      console.log(strInd); // 자차라바타
+      const eng = "abcdefghijklnmopqrstuvwxyz";
+      console.log("-----------------------------");
+      console.log("str의 길이는:" + str.length); // 14
+      console.log("strInd의 길이는:" + strInd.length); // 5
+      console.log("eng의 길이는:" + eng.length); // 26
+      console.log("str > strInd 비교:" + (str.length > strInd.length)); // str > strInd 비교:true
+      console.log("-----------------------------");
+
+      const a1 = "123";
+      const a2 = 123;
+      console.log(a1 == a2); // true
+      console.log(a1 === a2); // false -> 더 정확한 비교
+      console.log(a1 !== a2); // true
+      console.log(a1 != a2); // false
+    </script>
+  </head>
+  <body></body>
+</html>

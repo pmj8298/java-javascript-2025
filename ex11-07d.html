@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+        margin: auto;
+        text-align: center;
+      }
+      th,
+      tr,
+      td {
+        padding: 5px 10px;
+        background-color: rgb(223, 181, 248);
+      }
+      tr:first-of-type td {
+        background-color: #28b7fa;
+        color: white;
+        font-weight: bolder;
+      }
+      tr:nth-of-type(even) td {
+        background-color: rgb(214, 233, 241);
+      }
+      h2 {
+        margin-left: 45%;
+      }
+    </style>
+    <script>
+      const inp1 = true;
+      const inp2 = false;
+
+      document.write("<h2>&& and</h2>");
+      let list = ``;
+      list += `<table>`;
+      list += `  <tr>`;
+      list += `    <td>좌변</td>`;
+      list += `    <td>우변</td>`;
+      list += `    <td>결과</td>`;
+      list += `  </tr>`;
+      list += `  <tr>`;
+      list += `    <td>${inp1}</td>`;
+      list += `    <td>${inp1}</td>`;
+      list += `    <td>${inp1 && inp1}</td>`;
+      list += `  </tr>`;
+      list += `  <tr>`;
+      list += `    <td>${inp1}</td>`;
+      list += `    <td>${inp2}</td>`;
+      list += `    <td>${inp1 && inp2}</td>`;
+      list += `  </tr>`;
+      list += `  <tr>`;
+      list += `    <td>${inp2}</td>`;
+      list += `    <td>${inp1}</td>`;
+      list += `    <td>${inp2 && inp1}</td>`;
+      list += `  </tr>`;
+      list += `  <tr>`;
+      list += `    <td>${inp2}</td>`;
+      list += `    <td>${inp2}</td>`;
+      list += `    <td>${inp2 && inp2}</td>`;
+      list += `  </tr>`;
+      list += `</table>`;
+      document.write(list);
+
+      document.write("<h2>|| or</h2>");
+      let list2 = ``;
+      list2 += `<table>`;
+      list2 += `  <tr>`;
+      list2 += `    <td>좌변</td>`;
+      list2 += `    <td>우변</td>`;
+      list2 += `    <td>결과</td>`;
+      list2 += `  </tr>`;
+      list2 += `  <tr>`;
+      list2 += `    <td>${inp1}</td>`;
+      list2 += `    <td>${inp1}</td>`;
+      list2 += `    <td>${inp1 || inp1}</td>`;
+      list2 += `  </tr>`;
+      list2 += `  <tr>`;
+      list2 += `    <td>${inp1}</td>`;
+      list2 += `    <td>${inp2}</td>`;
+      list2 += `    <td>${inp1 || inp2}</td>`;
+      list2 += `  </tr>`;
+      list2 += `  <tr>`;
+      list2 += `    <td>${inp2}</td>`;
+      list2 += `    <td>${inp1}</td>`;
+      list2 += `    <td>${inp2 || inp1}</td>`;
+      list2 += `  </tr>`;
+      list2 += `  <tr>`;
+      list2 += `    <td>${inp2}</td>`;
+      list2 += `    <td>${inp2}</td>`;
+      list2 += `    <td>${inp2 || inp2}</td>`;
+      list2 += `  </tr>`;
+      list2 += `</table>`;
+      document.write(list2);
+    </script>
+  </head>
+  <body></body>
+</html>
