@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <script>
+      const temp = prompt("현재 온도를 입력하세요");
+      if (temp > 32) {
+        alert(`현재 온도는 ${temp}도이며, 상태는 정상온도를 넘겼습니다`);
+        document.write(
+          `<h2>현재 온도는 ${temp}도이며, 상태는 정상온도를 넘겼습니다</h2>`
+        );
+      } else {
+        if (temp >= 28 && temp < 32) {
+          alert(
+            `현재 온도는 ${temp}도이며, 상태는 정상온도 이하로 벗어났습니다`
+          );
+          document.write(
+            `<h2>현재 온도는 ${temp}도이며, 상태는  정상온도 이하로 벗어났습니다</h2>`
+          );
+        } else {
+          if (temp >= 22 && temp < 28) {
+            alert(`현재 온도는 ${temp}도이며, 상태는 정상온도 입니다`);
+            document.write(
+              `<h2>현재 온도는 ${temp}도이며, 상태는  정상온도 입니다</h2>`
+            );
+          } else {
+            if (temp >= 16 && temp < 22) {
+              alert(`현재 온도는 ${temp}도이며, 상태는 정상온도 이하입니다`);
+              document.write(
+                `<h2>현재 온도는 ${temp}도이며, 상태는  정상온도 이하입니다</h2>`
+              );
+            } else {
+              if (temp < 16) {
+                alert(
+                  `현재 온도는 ${temp}도이며, 상태는 정상온도 이하로 온도를 올려주세요`
+                );
+                document.write(
+                  `<h2>현재 온도는 ${temp}도이며, 상태는 정상온도 이하로 온도를 올려주세요</h2>`
+                );
+              } else {
+                alert(`잘못입력하셨습니다`);
+                document.write(`<h2>잘못입력하셨습니다</h2>`);
+              }
+            }
+          }
+        }
+      }
+    </script> -->
+    <style>
+      body {
+        display: flex;
+      }
+      table {
+        border: 1px solid black;
+        width: 300px;
+        height: 50px;
+      }
+
+      .t1 {
+        background-color: rgb(0, 26, 255);
+        padding: 0;
+        width: 300px;
+        height: 25px;
+      }
+      .t2 {
+        background-color: rgb(124, 32, 243);
+        border: 1px solid black;
+        padding: 0;
+        width: 300px;
+        height: 25px;
+      }
+      .t3 {
+        background-color: rgb(250, 246, 0);
+        border: 1px solid black;
+        padding: 0;
+        width: 300px;
+        height: 25px;
+      }
+      .t4 {
+        background-color: rgb(250, 133, 0);
+        border: 1px solid black;
+        padding: 0;
+        width: 300px;
+        height: 25px;
+      }
+      .t5 {
+        background-color: rgb(250, 0, 0);
+        border: 1px solid black;
+        padding: 0;
+        width: 300px;
+        height: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <table>
+        <tr>
+          <td colspan="6" style="text-align: center">16미만</td>
+        </tr>
+        <tr class="t1">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <td colspan="6"></td>
+      </table>
+    </div>
+    <div>
+      <table>
+        <tr>
+          <td colspan="4" style="text-align: center">16이상 ~ 22미만</td>
+        </tr>
+        <tr class="t2">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <td colspan="4"></td>
+      </table>
+    </div>
+    <div>
+      <table>
+        <tr>
+          <td colspan="4" style="text-align: center">22이상 ~ 28미만</td>
+        </tr>
+        <tr class="t3">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <td colspan="4"></td>
+      </table>
+    </div>
+    <div>
+      <table>
+        <tr>
+          <td colspan="3" style="text-align: center">28이상 ~ 32미만</td>
+        </tr>
+        <tr class="t4">
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <td colspan="3"></td>
+      </table>
+    </div>
+    <div>
+      <table>
+        <tr>
+          <td colspan="6" style="text-align: center">32이상</td>
+        </tr>
+        <tr class="t5">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <td colspan="6"></td>
+      </table>
+    </div>
+  </body>
+</html>
