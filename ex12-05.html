@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //   const a = (b = 10);
+      //   console.log(a); // 10
+      //   console.log(b); // 10
+
+      let a = (b = c = d = e = f = g = 10);
+      let aa, bb, cc, dd, ee, ff, gg;
+      console.log(a, b, c, d, e, f, g); // 10 10 10 10 10 10 10
+      console.log(aa, ~~bb, ~cc, !dd, !!ee, f, Number(gg)); // undefined 0 -1 true false 10 NaN
+      const test = Number(gg);
+      console.log(test, typeof test); // NaN 'number'
+      console.log(Number("안녕")); // NaN
+      console.log(0 / 0); // NaN
+      console.log(Math.sqrt(-1)); // NaN
+      console.log(test === test); // false
+      console.log(undefined === undefined); // true
+      console.log(NaN === NaN); // false
+      if (test === NaN) {
+        console.log("not a number을 발견했다 1"); // 절대 안나옴
+      }
+      if (Number.isNaN(test)) {
+        console.log("not a number을 발견했다 2"); // not a number을 발견했다 2
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

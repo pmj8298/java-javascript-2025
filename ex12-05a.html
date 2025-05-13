@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>falsy, Nullish</title>
+    <script>
+      const a1 = null;
+      const a2 = undefined;
+      const a3 = false;
+      const a4 = "1234";
+
+      /* Falsy */
+      console.log("-------------Falsy----------------");
+      console.log(a1 || "제가 대신 왔어용"); // 제가 대신 왔어용
+      console.log(a2 || "나도 대신 왔어용"); // 나도 대신 왔어용
+      console.log(a3 || "저도 대신 왔어용"); // 저도 대신 왔어용
+      console.log(a4 || "저는 안왔어용"); // 1234
+
+      /*병합연산자*/
+      /*잡아내서 뒤에 값으로 대체*/
+      console.log("-------------Nullish ----------------");
+      console.log(a1 ?? "제가 대신 왔어용"); // 제가 대신 왔어용
+      console.log(a2 ?? "나도 대신 왔어용"); // 나도 대신 왔어용
+      console.log(a3 ?? "저도 대신 왔어용"); // false
+      console.log(a4 ?? "저는 안왔어용"); // 1234
+    </script>
+  </head>
+  <body></body>
+</html>

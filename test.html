@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h2 {
+        text-align: center;
+        position: relative;
+        top: 300px;
+        /* animation: hi 3s ease-in infinite alternate;         */
+        animation: hi 3s linear forwards;
+      }
+      @keyframes hi {
+        0% {
+          transform: translate(0px, -300px);
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h2>안녕하세요</h2>
+  </body>
+</html>
