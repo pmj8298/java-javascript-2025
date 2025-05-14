@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <style>
+      div {
+        padding: 0;
+        margin: 50%;
+        background: url("https://thumb.ac-illust.com/a0/a0005c6a2ad48e585d300740a637dce9_t.jpeg");
+        width: 200px;
+        height: 400px;
+      }
+      .zzi {
+        background-position: -182px 0;
+        width: 180px;
+      }
+      .bba {
+        background-position: -380px 0;
+        width: 220px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      const now = dayjs();
+      const random = now.get("ms") % 3;
+      console.log(random);
+
+      if (random == 0) {
+        document.body.innerHTML = `<div class=""></div>`;
+      } else if (random == 1) {
+        document.body.innerHTML = `<div class="zzi"></div>`;
+      } else {
+        document.body.innerHTML = `<div class="bba"></div>`;
+      }
+    </script>
+  </body>
+</html>

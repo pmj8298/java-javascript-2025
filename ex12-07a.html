@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <!-- <script>
+    <script>
       const temp = prompt("현재 온도를 입력하세요");
       if (temp > 32) {
         alert(`현재 온도는 ${temp}도이며, 상태는 정상온도를 넘겼습니다`);
         document.write(
-          `<h2>현재 온도는 ${temp}도이며, 상태는 정상온도를 넘겼습니다</h2>`
+          `<h2 class="ani" style="color: rgb(250, 0, 0)">현재 온도는 ${temp}도이며, 상태는 정상온도를 넘겼습니다</h2>`
         );
       } else {
         if (temp >= 28 && temp < 32) {
@@ -17,19 +17,19 @@
             `현재 온도는 ${temp}도이며, 상태는 정상온도 이하로 벗어났습니다`
           );
           document.write(
-            `<h2>현재 온도는 ${temp}도이며, 상태는  정상온도 이하로 벗어났습니다</h2>`
+            `<h2 class="ani" style="color: rgb(250, 133, 0)">현재 온도는 ${temp}도이며, 상태는  정상온도 이하로 벗어났습니다</h2>`
           );
         } else {
           if (temp >= 22 && temp < 28) {
             alert(`현재 온도는 ${temp}도이며, 상태는 정상온도 입니다`);
             document.write(
-              `<h2>현재 온도는 ${temp}도이며, 상태는  정상온도 입니다</h2>`
+              `<h2 class="ani" style="color: rgb(250, 246, 0)">현재 온도는 ${temp}도이며, 상태는  정상온도 입니다</h2>`
             );
           } else {
             if (temp >= 16 && temp < 22) {
               alert(`현재 온도는 ${temp}도이며, 상태는 정상온도 이하입니다`);
               document.write(
-                `<h2>현재 온도는 ${temp}도이며, 상태는  정상온도 이하입니다</h2>`
+                `<h2 class="ani" style="color: rgb(124, 32, 234)">현재 온도는 ${temp}도이며, 상태는  정상온도 이하입니다</h2>`
               );
             } else {
               if (temp < 16) {
@@ -37,7 +37,7 @@
                   `현재 온도는 ${temp}도이며, 상태는 정상온도 이하로 온도를 올려주세요`
                 );
                 document.write(
-                  `<h2>현재 온도는 ${temp}도이며, 상태는 정상온도 이하로 온도를 올려주세요</h2>`
+                  `<h2 class="ani" style="color: rgb(0,26, 255)">현재 온도는 ${temp}도이며, 상태는 정상온도 이하로 온도를 올려주세요</h2>`
                 );
               } else {
                 alert(`잘못입력하셨습니다`);
@@ -47,13 +47,14 @@
           }
         }
       }
-    </script> -->
+    </script>
     <style>
       body {
         display: flex;
       }
       table {
         border: 1px solid black;
+
         width: 300px;
         height: 50px;
       }
@@ -91,6 +92,18 @@
         padding: 0;
         width: 300px;
         height: 25px;
+      }
+      @keyframes tp {
+        0% {
+          color: black;
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      .ani {
+        animation: tp 2s ease-in-out forwards;
       }
     </style>
   </head>

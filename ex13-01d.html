@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      const now = dayjs();
+      const random = now.get("ms") % 2;
+      console.log(random);
+
+      if (random == 0) {
+        document.body.innerHTML = `<div>당신은 타노스에게 우주를 위해 희생되었습니다</div>`;
+      } else {
+        document.body.innerHTML = `<div>당신은 타노스가 살려주었습니다</div>`;
+      }
+    </script>
+  </body>
+</html>
