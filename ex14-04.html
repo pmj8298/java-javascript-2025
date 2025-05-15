@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>배열</title>
+    <script>
+      const str = "안녕하세요";
+      console.log(str[1], str[2], str[3]); // 녕 하 세
+      console.log(str[str.length - 1]); // 요
+      /*배열선언1*/
+      const array0 = new Array(5);
+      console.log(array0); // [empty × 5]
+      /*배열선언2*/
+      const array = [273, "String", true, function () {}, {}, [273, 103]];
+      console.log(array); // [273, 'String', true, ƒ, {…}, Array(2)]
+      array[1] = "나는 누구";
+      console.log(array); // [273, '나는 누구', true, ƒ, {…}, Array(2)]
+      console.log(array, array.length); // [273, '나는 누구', true, ƒ, {…}, Array(2)] 6
+      array[1] = "나는누구";
+      /*배열초기화*/
+      let arr1 = [1, 2, 3];
+      console.log(arr1); // [1, 2, 3]
+      arr1 = [];
+      console.log(arr1); // []
+      const arr2 = [11, 22, 33];
+      console.log(arr2); // [11, 22, 33]
+      arr2.length = 0;
+      console.log(arr2); // []
+
+      /*유연한 배열, 크기 고정 안됨, 그래도 차례로 사용할 것*/
+      array[23] = "여긴어디?";
+      console.log(array, array.length); // [273, '나는누구', true, ƒ, {…}, Array(2), empty × 17, '여긴어디?'] 24
+      /* 특이사항, 배열도 객체*/
+      const arr = [1, 2, 3];
+      console.log(arr, arr.length); // [1, 2, 3] 3
+      arr["나는누구"] = "여긴어디";
+      console.log(arr, arr.length); // [1, 2, 3, 나는누구: '여긴어디'] 3
+      arr.forEach((v) => console.log(v));
+      //   1
+      //   2
+      //   3
+    </script>
+  </head>
+  <body></body>
+</html>
