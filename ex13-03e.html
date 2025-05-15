@@ -32,20 +32,29 @@
   </head>
   <body>
     <script>
-      const inp1 = prompt("총 인원은 몇명?");
-      const inp2 = prompt("한 줄에 몇명 앉을래?");
-      let list = ``;
-      list += `<table>`;
-      for (let i = 1; i <= inp1; i++) {
-        list += `<tr>`;
-        for (let j = 1; j <= inp2; j++) {
-          list += `<td>좌석${i}</td>`;
-        }
-        list += "</tr>";
-      }
-      list += "</table>";
+      const tot = prompt("총 인원은 몇 명?");
+      const line = prompt("한 줄에 몇 명 앉을래?");
+      let table = "<table border='1'><tr>";
+      let count = 1;
 
-      document.body.innerHTML = list;
+      for (let i = 1; i <= tot; i++) {
+        table += `<td>좌석${i}</td>`;
+        if (i % line == 0 && i != tot) {
+          table += "</tr><tr>";
+        }
+      }
+      if (tot % line != 0) {
+        let empty = line - (tot % line);
+        for (let i = 0; i < empty; i++) {
+          table += "<td></td>";
+        }
+        table += "</tr>";
+      } else {
+        table += "</tr>";
+      }
+
+      table += "</table>";
+      document.body.innerHTML = table;
     </script>
   </body>
 </html>
