@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>배열</title>
+  </head>
+  <body>
+    <script>
+      const arr = [
+        "딸기",
+        "바나나",
+        "사과",
+        "망고",
+        "배",
+        "키위",
+        "수박",
+        "메론",
+        "포도",
+        "자몽",
+      ];
+
+      const inp1 = prompt("제거하고 싶은 과일을 입력하세요");
+      const darr = arr.findIndex((v) => v === inp1);
+      console.log(darr);
+
+      if (darr !== -1) {
+        arr.splice(darr, 1);
+        console.log(arr);
+      } else {
+        console.log("요소가 없습니다");
+      }
+      // document.body.innerHTML = `제거된 후: ${arr}`;
+
+      const inp2 = prompt("추가하고 싶은 과일을 입력하세요");
+      const darr2 = arr.findIndex((v) => v === inp2);
+      console.log(darr2);
+      // const inp3 = arr.includes(inp2);
+      if (darr2 !== -1) {
+        alert("이미 있습니다");
+      } else {
+        arr.splice(1, 0, inp2);
+        console.log(arr);
+      }
+
+      document.body.innerHTML = `제거하고 추가된 후 목록: ${arr}`;
+    </script>
+  </body>
+</html>
