@@ -4,7 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>배열</title>
-    <script></script>
+    <script>
+      const todos = ["올영가기", "넷플보기", "과자먹기"];
+      console.log(todos); // ['올영가기', '넷플보기', '과자먹기']
+      todos.push("저녁준비");
+      console.log(todos); // ['올영가기', '넷플보기', '과자먹기', '저녁준비']
+      todos.splice(1, 1);
+      console.log(todos); // ['올영가기', '과자먹기', '저녁준비']
+      /*1번 인덱스부터 2개를 삭제*/
+      todos.splice(1, 2);
+      console.log(todos); // ['올영가기']
+      todos.splice(2, 0, "초콜릿먹기");
+      console.log(todos); // ['올영가기', '초콜릿먹기']
+    </script>
   </head>
   <body></body>
 </html>
