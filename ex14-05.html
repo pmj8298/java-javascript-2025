@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const arr = [
+        "강아지",
+        "고양이",
+        "토끼",
+        "병아리",
+        "참새",
+        "고슴도치",
+        "햄스터",
+      ];
+      for (let i = 0; i < arr.length; i++) {
+        console.log(i, arr[i]);
+      }
+      for (let i = arr.length - 1; i >= 0; i--) {
+        console.log("거꾸로:", i, arr[i]);
+      }
+
+      // 쓰지마
+      for (const i in arr) {
+        console.log(i, arr[i]);
+      }
+      console.log("------------------");
+
+      for (const i of arr) {
+        console.log(i);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
