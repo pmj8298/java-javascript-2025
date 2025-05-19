@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let list = ""; // 최종출력
+      let epoch = 10000; // 횟수
+      let turn = 0; // 증가값
+      const arr = [0, 0, 0, 0, 0, 0];
+
+      for (let i = 0; i < epoch; i++) {
+        const ran = Math.floor(Math.random() * 6);
+        arr[ran]++;
+      }
+
+      for (let i = 0; i < 6; i++) {
+        list += `${i + 1}이 나온 횟수: ${arr[i]} (${(
+          (arr[i] / epoch) *
+          100
+        ).toFixed(1)}%)<br>`;
+      }
+
+      document.body.innerHTML = list;
+    </script>
+  </body>
+</html>

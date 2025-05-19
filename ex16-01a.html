@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let dice = (i = d1 = d2 = d3 = d4 = d5 = d6 = 0);
+      const diceCount = [0, 0, 0, 0, 0, 0];
+      const gameEnd = 10 * 1000;
+
+      while (i < gameEnd) {
+        const array = new Uint8Array(1);
+        crypto.getRandomValues(array);
+        dice = (array[0] % 6) + 1;
+        if (dice == 1) {
+          diceCount[0]++;
+        } else if (dice == 2) {
+          diceCount[1]++;
+        } else if (dice == 3) {
+          diceCount[2]++;
+        } else if (dice == 4) {
+          diceCount[3]++;
+        } else if (dice == 5) {
+          diceCount[4]++;
+        } else if (dice == 6) {
+          diceCount[5]++;
+        }
+        i++;
+      }
+      console.log(diceCount);
+      console.log([d1, d2, d3, d4, d5, d6]);
+    </script>
+  </head>
+  <body>
+    <script>
+      document.body.innerHTML = diceCount;
+    </script>
+  </body>
+</html>
