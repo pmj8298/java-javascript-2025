@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 같은 이름 전역변수 지역변수 구분
+      let num = 100;
+      function fn1() {
+        let num = 200;
+        document.write(`함수 내부에서 변수 값은 ${num}<br>`); // 200
+      }
+      fn1();
+      document.write(`함수 외부에서 변수 값은 ${num}<hr>`); // 100
+
+      // 전역변수A
+      let num2 = 100;
+      function fn2() {
+        num2 = 200;
+        document.write(`함수 내부에서 변수 값은 ${num2}<br>`); // 200
+      }
+      fn2(); // 전역 변수 num2가 200으로 변경됨.
+      document.write(`함수 외부에서 변수 값은 ${num2}<hr>`); // 200
+
+      // 전역변수B
+      let num3 = 100;
+      function fn3() {
+        document.write(`함수 내부에서 변수 값은 ${num3}<br>`); // 100
+        num3 = 200;
+      }
+      fn3();
+      document.write(`함수 외부에서 변수 값은 ${num3}<hr>`); // 200
+    </script>
+  </body>
+</html>

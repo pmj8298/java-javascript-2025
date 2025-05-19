@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>화살표 함수</title>
+  </head>
+  <body>
+    <script>
+      // 일반표현
+      const fn1 = function (a, b) {
+        return a * b;
+      };
+      console.log(fn1(5, 4)); // 20
+
+      const fn2 = (a, b) => a * b;
+      console.log(fn2(4, 5)); // 20
+
+      const fn3 = () => console.log("바로 표현?"); // 바로 표현?
+      console.log(fn3()); // undefined
+      fn3(); // 바로 표현?
+
+      const fn4 = () => "간략하게 가능";
+      console.log(fn4()); // 간략하게 가능
+
+      const log = (text) => console.log(text);
+      log("누구인가유");
+
+      const a = (text) => alert(text);
+      a("왕왕");
+    </script>
+  </body>
+</html>

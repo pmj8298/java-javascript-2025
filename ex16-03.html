@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const show = function () {
+        alert("알림창이 보여집니다");
+      };
+      //   const 인사 = function () {
+      //     return "인사";
+      //   };
+      const myinfo = function (v) {
+        console.log(v.value); // hello
+        console.log(v.id); // h-id
+        console.log(v.className); // btn test good
+        console.log(v.classList); // ['btn', 'test', 'good', value: 'btn test good'] -> 배열로 반환해줌
+        console.log(v.name); // okok
+      };
+    </script>
+  </head>
+  <body>
+    <button onclick="show()">알림창</button>
+    <button
+      id="h-id"
+      onclick="myinfo(this)"
+      value="hello"
+      name="okok"
+      class="btn test good"
+    >
+      myinfo
+    </button>
+  </body>
+</html>
