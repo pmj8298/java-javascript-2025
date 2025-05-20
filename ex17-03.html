@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        text-align: center;
+        margin-left: 50px;
+        padding: 40px;
+        background: #f2f2f2;
+      }
+      #count {
+        font-size: medium;
+        font-weight: bold;
+        color: #333;
+        padding: 10px;
+        text-align: right;
+      }
+      textarea {
+        position: relative;
+        width: 360px;
+        background: #fffbe6;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        border-radius: 8px;
+        overflow: hidden;
+        margin-left: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <!-- h1#count{글자수 : 0} -->
+      <h1 id="count">글자수 : 0</h1>
+      <textarea
+        name=""
+        id=""
+        cols="30"
+        rows="10"
+        maxlength="250"
+        onkeyup="updateText()"
+      ></textarea>
+    </div>
+    <script>
+      function updateText() {
+        const textArea = document.querySelector("textarea");
+        const count = document.querySelector("#count");
+        count.textContent = `글자수 : ${textArea.value.length}`;
+        if (Number(textArea.value.length) >= 100) {
+          alert("100자 이내로 작성해주세요");
+        }
+      }
+
+      //   const textArea = document.querySelector("textarea");
+      //   const updateText = () => {
+      //     const count = document.querySelector("#count");
+      //     count.textContent = `글자수 : ${textArea.value.length}`;
+      //   };
+      //   textArea.addEventListener("keyup", updateText);
+    </script>
+  </body>
+</html>

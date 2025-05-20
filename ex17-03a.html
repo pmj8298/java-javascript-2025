@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Styled Notepad</title>
+    <style>
+      /* 전체 레이아웃 및 배경 */
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 100vh;
+        margin: 0;
+        padding: 40px;
+        background: #f2f2f2;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      /* 노트패드 컨테이너 */
+      .notepad {
+        position: relative;
+        width: 360px;
+        background: #fffbe6;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      /* 상단 바 디자인 */
+      .notepad-header {
+        display: flex;
+        align-items: center;
+        padding: 8px;
+        background: linear-gradient(90deg, #ffe58f, #ffd666);
+        border-bottom: 1px solid #e6a700;
+      }
+      .notepad-header .dots {
+        display: flex;
+        gap: 5px;
+      }
+      .notepad-header .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+      }
+      .dot.red {
+        background: #ff5f56;
+      }
+      .dot.yellow {
+        background: #ffbd2e;
+      }
+      .dot.green {
+        background: #27c93f;
+      }
+
+      /* 글자수 표시 */
+      #count {
+        margin: 0;
+        font-size: 14px;
+        font-weight: 500;
+        color: #333;
+        padding: 8px;
+        text-align: right;
+      }
+
+      /* 텍스트 영역 스타일 */
+      textarea {
+        width: 100%;
+        box-sizing: border-box;
+        border: none;
+        padding: 16px;
+        font-size: 16px;
+        line-height: 1.5;
+        resize: none;
+        background: none;
+        color: #333;
+        font-family: inherit;
+        outline: none;
+      }
+      textarea::-webkit-scrollbar {
+        width: 8px;
+      }
+      textarea::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="notepad">
+      <div class="notepad-header">
+        <div class="dots">
+          <div class="dot red"></div>
+          <div class="dot yellow"></div>
+          <div class="dot green"></div>
+        </div>
+      </div>
+      <h1 id="count">글자수 : 0</h1>
+      <textarea
+        id="memo"
+        maxlength="250"
+        onkeyup="updateText()"
+        placeholder="메모를 입력하세요..."
+        rows="10"
+      ></textarea>
+    </div>
+
+    <script>
+      function updateText() {
+        const textArea = document.getElementById("memo");
+        const count = document.getElementById("count");
+        const length = textArea.value.length;
+        count.textContent = `글자수 : ${length}`;
+        if (length >= 100) {
+          alert("100자 이내로 작성해주세요");
+        }
+      }
+    </script>
+  </body>
+</html>
