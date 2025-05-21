@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function pt(name) {
+        console.log(name + "안녕??");
+      }
+      setTimeout(pt("홍길동"), 1000);
+      setTimeout(pt("홍"), 2000);
+      setTimeout(pt("길동"), 3000);
+      //   setTimeout(pt(), 3000); // 이렇게 하면 함수가 바로 실행되어서 setTimeout을 사용할 이유없음
+
+      addEventListener("click", pt);
+    </script>
+  </head>
+  <body></body>
+</html>
