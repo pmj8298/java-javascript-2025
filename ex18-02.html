@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function ccc(cb) {
+        for (let i = 0; i < 3; i++) {
+          cb(i);
+        }
+      }
+      function pp(x) {
+        document.writeln(`${x}번째 함수 호출`);
+      }
+      function pp1(x) {
+        document.write(`${x}번째 함수 호출`);
+      }
+      function pp2(x) {
+        document.log(`${x}번째 함수 호출`);
+      }
+
+      ccc(pp1);
+    </script>
+  </head>
+  <body></body>
+</html>
