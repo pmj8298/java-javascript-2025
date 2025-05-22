@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>filter</title>
+    <script>
+      const fruits = [
+        "Apple",
+        "Banana",
+        "Orange",
+        "Grapes",
+        "Peach",
+        "Kiwi",
+        "Pineapple",
+        "Mango",
+        "Watermelon",
+        "Plum",
+        "Cherry",
+        "Strawberry",
+        "Blueberry",
+        "Raspberry",
+        "Lemon",
+        "Lime",
+        "Avocado",
+        "Melon",
+        "Coconut",
+        "Pomegranate",
+      ];
+      const big_ft = (v) => v.length > 5;
+      const small_ft = (v) => v.length <= 5;
+      const box = fruits.filter(big_ft);
+      const box1 = fruits.filter(small_ft);
+      console.log(box, box.length);
+      console.log(box1, box1.length);
+    </script>
+  </head>
+  <body></body>
+</html>
