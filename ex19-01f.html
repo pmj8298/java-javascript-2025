@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOMContentLoaded</title>
+    <script>
+      function fn(event) {
+        console.log(event);
+        console.log(event.value);
+        console.log(event.target);
+        console.log(event.currentTarget); // addEventListener가 어디 붙어있는지, 붙어있는 시점을 기준으로 보여줌
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const btn = document.querySelector("button");
+        btn.addEventListener("click", fn);
+      });
+    </script>
+    <style></style>
+  </head>
+  <body>
+    <!-- div.test>button>span{테스트용 버튼} -->
+    <div class="test">
+      <button><span>테스트용 버튼</span></button>
+    </div>
+  </body>
+</html>
