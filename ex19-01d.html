@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cssText</title>
+    <script></script>
+    <style></style>
+  </head>
+  <body>
+    <h1 style="font-size: 2.5rem; text-align: end; color: rgb(160, 187, 223)">
+      cssText의 속성을 알아보자
+    </h1>
+    <button>값 읽어오기</button>
+    <button>스타일1</button>
+    <button>스타일2</button>
+    <p></p>
+    <script>
+      const h1 = document.querySelector("h1");
+      const p = document.querySelector("p");
+      const btns = document.querySelectorAll("button");
+      btns[0].addEventListener("click", () => {
+        p.innerHTML = h1.style.cssText;
+      });
+      btns[1].addEventListener("click", () => {
+        h1.style.cssText =
+          "font-size: 5rem; text-align: start; color: rgb(160, 222, 223);";
+      });
+      btns[2].addEventListener("click", () => {
+        h1.style.cssText =
+          "font-size: 2.5rem; text-align: center; color: rgb(110, 222, 22);";
+      });
+    </script>
+  </body>
+</html>
