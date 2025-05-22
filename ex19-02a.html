@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <script>
+      const arr = Array(100)
+        .fill(0)
+        // .map((v, i) => i + 1);
+        .map((v, i) => {
+          return i + 1;
+        });
+      console.log(arr);
+    </script> -->
+  </head>
+  <body>
+    <script>
+      let num = 0;
+      const arr = Array(30)
+        .fill(0)
+        .map((v, i) => {
+          if (i >= 0 && i < 10) {
+            num += 1;
+          }
+          if (i >= 10 && i < 20) {
+            num = i * 2;
+          }
+          if (i >= 20 && i < 30) {
+            num = num - 1;
+          }
+          return num;
+        });
+      console.log(arr);
+    </script>
+  </body>
+</html>

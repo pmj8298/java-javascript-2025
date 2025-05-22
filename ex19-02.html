@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const arr1 = [1, 2, 3, 4, 5];
+      console.log(arr1); // [1, 2, 3, 4, 5]
+      const arr2 = arr1.map((v) => v * 11);
+      console.log(arr2); // [11, 22, 33, 44, 55]
+      // const arr3 = arr1.map((v,i) => v * 11);
+      const arr3 = arr1.map((_, i) => i); // v대신 _를 사용하기도 함 -> _는 "이 값은 안 쓸 거야"라는 의미로 흔히 사용
+      console.log(arr3); // [0, 1, 2, 3, 4]
+    </script>
+  </head>
+  <body></body>
+</html>

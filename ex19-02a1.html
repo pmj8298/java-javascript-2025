@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <script>
+      const arr = Array(100)
+        .fill(0)
+        // .map((v, i) => i + 1);
+        .map((v, i) => {
+          return i + 1;
+        });
+      console.log(arr);
+    </script> -->
+  </head>
+  <body>
+    <script>
+      let num = 0;
+      let num1 = 1;
+      const arr = Array(100)
+        .fill(0)
+        .map((v, i) => {
+          if (i >= 0 && i < 30) {
+            num = 0;
+          }
+          if (i >= 30 && i < 70) {
+            num = "안녕";
+          }
+          if (i >= 70 && i < 100) {
+            return num1++;
+          }
+          return num;
+        });
+      console.log(arr);
+    </script>
+  </body>
+</html>
