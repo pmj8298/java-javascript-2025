@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>forEach</title>
+    <script></script>
+  </head>
+  <body>
+    <img src="" alt="" class="rect" />
+    <img src="" alt="" class="rect" />
+    <img src="" alt="" class="rect" />
+    <img src="" alt="" class="rect" />
+    <img src="" alt="" class="rect" />
+    <img src="" alt="" class="rect" />
+    <img src="" alt="" class="rect" />
+    <script>
+      const rects = document.querySelectorAll(".rect");
+      // rects.forEach(superman, batman, box);
+      rects.forEach((rect, i) => {
+        const width = (i + 1) * 100;
+        const url = `https://placecats.com/${width}/${width}`;
+
+        console.log(rect);
+        rect.src = url;
+      });
+    </script>
+  </body>
+</html>

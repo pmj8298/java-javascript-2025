@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>forEach</title>
+    <script>
+      const arr = [11, 22, 33, 44, 55, 66, 77, 88, 99];
+      arr.forEach(function (value, index, array) {
+        console.log(value);
+        console.log(index);
+        console.log(array);
+      });
+      arr.forEach((v) => console.log(v));
+      arr.forEach((v, i) => console.log(`인덱스는 ${i} 값은 ${v}`));
+      arr.forEach((v, i, a) => console.log(v, i, a));
+      // forEach는 반환하는 값이 없이 순회만 함 -> console을 찍어야 확인가능 함
+
+      const array = [];
+      arr.forEach((v) => array.push(v * 2));
+      console.log(array);
+    </script>
+  </head>
+  <body></body>
+</html>

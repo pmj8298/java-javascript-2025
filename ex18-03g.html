@@ -4,16 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>타이머응용</title>
+  </head>
+  <body>
+    <button>재귀 타이머 동작</button>
+    <button>재귀 타이머 정지</button>
+    <button>화면 지우기</button>
+    <div></div>
     <script>
+      let timeId;
+      const btn = document.querySelectorAll("button");
+      const div = document.querySelector("div");
+
       let num = 0;
-      const fn1 = () =>
-        setTimeout(() => {
-          document.write(`${++num} 반복중...<br>`);
+      const fn1 = () => {
+        timeId = setTimeout(() => {
+          // document.write(`${++num} 반복중...<br>`);
+          div.innerHTML += `${++num} 반복중...<br>`;
           fn1(); // 재귀함수
         }, 1000);
+      };
 
-      fn1();
+      // fn1();
+      const timeOff = () => {
+        num = 0;
+        clearInterval(timeId);
+      };
+
+      const clearDoc = () => (div.innerHTML = "");
+      btn[0].addEventListener("click", fn1);
+      btn[1].addEventListener("click", timeOff);
+      btn[2].addEventListener("click", clearDoc);
     </script>
-  </head>
-  <body></body>
+  </body>
 </html>
