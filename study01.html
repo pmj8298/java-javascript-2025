@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>시계</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #ffffff;
+      }
+
+      .clock {
+        width: 300px;
+        height: 300px;
+        border: 10px double black;
+        border-radius: 50%;
+        position: relative;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+        background-color: lightblue;
+      }
+
+      .c-hour,
+      .c-minute,
+      .c-second {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) rotate(0deg);
+        transform-origin: 0% 50%;
+        /* transform-origin: center left; */
+        /* transform: rotate(90deg); */
+      }
+
+      .c-hour {
+        width: 80px;
+        height: 6px;
+        background-color: #333;
+      }
+
+      .c-minute {
+        width: 110px;
+        height: 4px;
+        background-color: #666;
+      }
+
+      .c-second {
+        width: 130px;
+        height: 2px;
+        background-color: rgb(132, 0, 255);
+      }
+
+      .c-center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 12px;
+        height: 12px;
+        background-color: black;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="clock">
+      <div class="c-hour" id="hour"></div>
+      <div class="c-minute" id="minute"></div>
+      <div class="c-second" id="second"></div>
+      <div class="c-center"></div>
+    </div>
+
+    <script>
+      function updateClock() {
+        const now = new Date();
+        console.log(new Date());
+
+        const seconds = now.getSeconds();
+        const minutes = now.getMinutes();
+        const hours = now.getHours();
+
+        const secondMove = seconds * 6;
+        const minuteMove = minutes * 6;
+        const hourMove = (hours % 12) * 30;
+
+        document.getElementById(
+          "second"
+        ).style.transform = `rotate(${secondMove}deg)`;
+        document.getElementById(
+          "minute"
+        ).style.transform = `rotate(${minuteMove}deg)`;
+        document.getElementById(
+          "hour"
+        ).style.transform = `rotate(${hourMove}deg)`;
+      }
+
+      setInterval(updateClock, 1000);
+      updateClock();
+      //   document.write(`${hours}시`);
+    </script>
+  </body>
+</html>
