@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>this</title>
+    <script>
+      // p252
+      const obj = {
+        a: function () {
+          console.log(this);
+        },
+        b: () => {
+          console.log(this);
+        },
+      };
+
+      obj.a(); // {a: ƒ, b: ƒ}
+      obj.b(); // Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+    </script>
+  </head>
+  <body></body>
+</html>
