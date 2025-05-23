@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자료형</title>
+    <script>
+      const str = "반가워요.";
+      console.log(str.length, typeof str); // 5 'string'
+      // str.forEach((v) => console.log(v)); -> 문자열은 배열처럼 forEach를 못 써요. 배열만 가능
+      console.log(String); // ƒ String() { [native code] }'
+      const arr = [11, 22, 33];
+      console.log(Array);
+      arr.forEach((v) => console.log(v));
+      console.log(Number);
+      const num = "456";
+      Number(num);
+    </script>
+  </head>
+  <body></body>
+</html>

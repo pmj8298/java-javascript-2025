@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자료형</title>
+    <script>
+      const obj = {
+        name: "김가나",
+        age: 22,
+        power: "80%",
+        skill: "아버지라 부르고 싶어",
+      };
+      const { name, age } = obj;
+      console.log(name, age); // 김가나 22
+      const { name: a, age: b } = obj;
+      console.log(a, b); // 김가나 22
+      const { power, skill } = obj;
+      console.log(power, skill); // 80% 아버지라 부르고 싶어
+    </script>
+  </head>
+  <body></body>
+</html>
