@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>polarArea차트</title>
+    <style>
+      .my-box {
+        width: 400px;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="my-box">
+      <canvas id="myChart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+      const ctx = document.getElementById("myChart");
+
+      const dice = [0, 0, 0, 0, 0, 0];
+
+      for (let i = 0; i < 10000; i++) {
+        const array = new Uint8Array(2);
+        crypto.getRandomValues(array);
+        const ran = (array[0] % 6) + 1;
+        dice[ran - 1]++;
+      }
+      console.log(dice);
+
+      const labels = [
+        "주사위1",
+        "주사위2",
+        "주사위3",
+        "주사위4",
+        "주사위5",
+        "주사위6",
+      ];
+      const data = {
+        labels: labels,
+        datasets: [
+          {
+            label: "주사위눈 개수",
+            data: dice,
+            backgroundColor: [
+              "rgb(255, 99, 132)",
+              "rgb(255, 159, 64)",
+              "rgb(255, 205, 86)",
+              "rgb(75, 192, 192)",
+              "rgb(54, 162, 235)",
+              "rgb(153, 102, 255)",
+              "rgb(201, 203, 207)",
+            ],
+            borderColor: [
+              "rgb(255, 99, 132)",
+              "rgb(255, 159, 64)",
+              "rgb(255, 205, 86)",
+              "rgb(75, 192, 192)",
+              "rgb(54, 162, 235)",
+              "rgb(153, 102, 255)",
+              "rgb(201, 203, 207)",
+            ],
+          },
+        ],
+      };
+
+      const config = {
+        type: "polarArea",
+        data: data,
+        options: {},
+      };
+
+      new Chart(ctx, config);
+    </script>
+  </body>
+</html>
