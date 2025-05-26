@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // 속성이 사라짐, 일시적 승급
+      const h = "안녕";
+      h.sample = 10;
+      console.log(h.sample); // undefined
+
+      String.prototype.power = function () {
+        return this.valueOf() + "입니다";
+      };
+
+      const test = "한글";
+      console.log(test.power());
+    </script>
+  </head>
+  <body></body>
+</html>
