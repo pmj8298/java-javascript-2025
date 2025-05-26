@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>문서 객체 생성하기</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hi+Melody&family=Imperial+Script&family=Nanum+Brush+Script&family=Nanum+Pen+Script&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Hi Melody", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      h1 {
+        background-color: rgb(214, 241, 214);
+        border-radius: 30px;
+        /* display: inline-block; */
+        padding: 10px 20px;
+        /* position: absolute; */
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      li {
+        background-color: lightblue;
+        margin: 5px 10px;
+        padding: 10px 20px;
+        border-radius: 10px;
+        width: 200px;
+        transition: 0.6s ease;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+        font-size: 2rem;
+      }
+      li:nth-of-type(odd) {
+        background-color: rgb(240, 133, 183);
+      }
+      li:hover {
+        background-color: darkseagreen;
+        /* width: 250px; */
+        transform: scale(1.2, 1.2);
+        transition: 1s ease;
+      }
+      button {
+        background-color: rgb(133, 202, 106);
+        border: none;
+        margin-left: 10px;
+        border-radius: 50px;
+        cursor: pointer;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+      }
+      button:hover {
+        background-color: rgb(104, 160, 82);
+      }
+      input {
+        border-radius: 10px;
+      }
+      hr {
+        border: 3px double rgb(115, 145, 64);
+        background-color: rgb(115, 145, 64);
+        margin-top: 10px;
+        border-radius: 10px;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // 생성
+        const h1 = document.createElement("h1");
+        const inp = document.createElement("input");
+        const btn = document.createElement("button");
+        const hr = document.createElement("hr");
+        const ul = document.createElement("ul");
+
+        // 위치 정해줌
+        document.body.append(h1, inp, btn, hr, ul);
+        // document.body.appendChild(h1);
+        // document.body.appendChild(inp);
+        // document.body.appendChild(btn);
+        // document.body.appendChild(hr);
+        // document.body.appendChild(ul);
+
+        h1.textContent = "✅ToDoList 생성";
+        btn.textContent = "생성";
+        // const inpv = () => console.log(inp.value); => 테스트 할 때 사용
+
+        // btn.addEventListener("click", () => {
+        //   inpv();
+        // }); // 개 쓸때는 이렇게 하면 됨
+
+        btn.addEventListener("click", () => {
+          const li = document.createElement("li");
+          ul.appendChild(li);
+          // li.textContent = v;
+          // inpv();
+          // 위 두 줄이랑 const inpv = () => console.log(inp.value);이거 합해서 아래 한 줄로 표현
+          li.textContent = inp.value;
+        });
+
+        // items.forEach((v) => {
+        //   const li = document.createElement("li");
+        //   ul.appendChild(li);
+        //   li.textContent = v;
+        // });
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

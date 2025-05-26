@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>문서 객체 생성하기</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Imperial+Script&family=Nanum+Brush+Script&family=Nanum+Pen+Script&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Imperial Script", cursive;
+        font-weight: 700;
+        font-size: 3rem;
+        font-style: normal;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      li {
+        background-color: lightblue;
+        margin: 5px 0;
+        padding: 10px 20px;
+        border-radius: 10px;
+        width: 200px;
+        transition: 0.6s ease;
+      }
+      li:hover {
+        background-color: darkseagreen;
+        width: 250px;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const items = [
+          "Apple",
+          "Banana",
+          "Orange",
+          "Grapes",
+          "Peach",
+          "Kiwi",
+          "Pineapple",
+          "Mango",
+          "Watermelon",
+          "Plum",
+          "Cherry",
+          "Strawberry",
+          "Blueberry",
+          "Raspberry",
+          "Lemon",
+          "Lime",
+          "Avocado",
+          "Melon",
+          "Coconut",
+          "Pomegranate",
+        ];
+
+        const ul = document.createElement("ul");
+
+        document.body.appendChild(ul);
+        items.forEach((v) => {
+          const li = document.createElement("li"); // <li> 만들기
+          li.textContent = v; // 안에 과일 이름 넣기
+          ul.appendChild(li); // <ul> 안에 <li> 추가
+        });
+      });
+    </script>
+  </head>
+  <body></body>
+</html>
