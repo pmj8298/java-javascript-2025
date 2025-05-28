@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bar 차트 + 로또 번호</title>
+    <style>
+      .my-box {
+        width: 400px;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="my-box">
+      <canvas id="myChart"></canvas>
+    </div>
+
+    <p>로또 번호: <span id="lottoResult">없음</span></p>
+    <button id="getLotto">로또 번호 뽑기</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+      const ctx = document.getElementById("myChart");
+
+      const labels = [
+        "34번",
+        "12번",
+        "27번",
+        "13번",
+        "33번",
+        "17번",
+        "43번",
+        "1번",
+        "7번",
+        "20번",
+      ];
+
+      const data = {
+        labels: labels,
+        datasets: [
+          {
+            label: "로또당첨횟수",
+            data: [203, 199, 198, 197, 197, 194, 194, 192, 192, 192],
+            backgroundColor: [
+              "rgba(255, 99, 132, 0.2)",
+              "rgba(255, 159, 64, 0.2)",
+              "rgba(255, 205, 86, 0.2)",
+              "rgba(75, 192, 192, 0.2)",
+              "rgba(54, 162, 235, 0.2)",
+              "rgba(153, 102, 255, 0.2)",
+              "rgba(201, 20, 207, 0.2)",
+              "rgba(20, 20, 207, 0.2)",
+              "rgba(201, 203, 20, 0.2)",
+              "rgba(20, 203, 70, 0.2)",
+            ],
+            borderColor: [
+              "rgb(255, 99, 132)",
+              "rgb(255, 159, 64)",
+              "rgb(255, 205, 86)",
+              "rgb(75, 192, 192)",
+              "rgb(54, 162, 235)",
+              "rgb(153, 102, 255)",
+              "rgb(201, 203, 207)",
+              "rgb(201, 203, 207)",
+              "rgb(201, 203, 207)",
+              "rgb(201, 203, 207)",
+            ],
+            borderWidth: 1,
+          },
+        ],
+      };
+
+      new Chart(ctx, {
+        type: "bar",
+        data: data,
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+
+      function getLottoNumbers() {
+        const numbers = [];
+        while (numbers.length < 6) {
+          const random = new Uint8Array(1);
+          crypto.getRandomValues(random);
+          const num = Math.floor((random[0] / 256) * 45) + 1;
+          if (!numbers.includes(num)) {
+            numbers.push(num);
+          }
+        }
+        return numbers;
+      }
+
+      document.querySelector("#getLotto").addEventListener("click", () => {
+        const lotto = getLottoNumbers();
+        document.querySelector("#lottoResult").textContent = lotto.join(", ");
+      });
+    </script>
+  </body>
+</html>
