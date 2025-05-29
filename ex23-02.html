@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .content {
+        text-align: center;
+        padding: 50px;
+        color: darkblue;
+      }
+      #about {
+        background-color: lightblue;
+      }
+      #products {
+        background-color: lightcoral;
+        /* display: none; */
+      }
+      #technology {
+        background-color: lightgreen;
+        /* display: none; */
+      }
+      #downloads {
+        background-color: lightseagreen;
+        /* display: none; */
+      }
+      #etc {
+        background-color: lightyellow;
+        /* display: none; */
+      }
+      .tab {
+        float: left;
+        background-color: lightslategray;
+        color: wheat;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        font-size: 1.1rem;
+        width: 20%;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- (div.content>h1+p)*5 -->
+    <div id="about" class="content">
+      <h1>About</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, aperiam.
+      </p>
+    </div>
+    <div id="products" class="content">
+      <h1>Products</h1>
+      <p>Lorem, ipsum dolor.</p>
+    </div>
+    <div id="technology" class="content">
+      <h1>Technology</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
+        praesentium commodi repellendus dolorum, iste nesciunt reiciendis ea
+        quod quisquam labore quibusdam ipsa voluptatibus optio, eaque nostrum
+        minus excepturi, odio architecto!
+      </p>
+    </div>
+    <div id="downloads" class="content">
+      <h1>Downloads</h1>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+    </div>
+    <div id="etc" class="content">
+      <h1>Etc</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate,
+        repudiandae tempora aut dolores suscipit odio?
+      </p>
+    </div>
+    <!-- div.tab-container>button.tab*5 -->
+    <div class="tab-container">
+      <button class="tab" onclick="openMenu('about',this,'lightblue')">
+        About
+      </button>
+      <button class="tab" onclick="openMenu('products',this,'lightcoral')">
+        Products
+      </button>
+      <button class="tab" onclick="openMenu('technology',this,'lightgreen')">
+        Technology
+      </button>
+      <button class="tab" onclick="openMenu('downloads',this,'lightseagreen')">
+        Downloads
+      </button>
+      <button class="tab" onclick="openMenu('etc',this,'lightyellow')">
+        Etc
+      </button>
+    </div>
+    <script>
+      const openMenu = (targetId, currentBtn, color) => {
+        const contents = document.querySelectorAll(".content");
+        const tabs = document.querySelectorAll(".tab");
+        contents.forEach((v) => {
+          v.style.display = "none";
+        });
+        tabs.forEach((v) => {
+          v.style.backgroundColor = "lightslategray";
+        });
+        document.getElementById(targetId).style.display = "block";
+        currentBtn.style.backgroundColor = color;
+      };
+      openMenu("about", this, "lightblue");
+      window.onload = () => tabs[0].click(); // 버튼을 누르는 동작
+    </script>
+  </body>
+</html>
