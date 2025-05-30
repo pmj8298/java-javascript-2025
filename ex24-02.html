@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        background-color: antiquewhite;
+        padding: 2rem;
+      }
+      .chat-container {
+        width: 600px;
+        height: 500px;
+        margin: auto;
+        background-color: white;
+        padding: 1rem 4rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+      }
+      .message {
+        display: flex;
+        margin-bottom: 1.2rem;
+        align-items: end;
+      }
+      .message.bot {
+        justify-content: start;
+      }
+      .message.user {
+        justify-content: end;
+      }
+
+      /* .avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      } */
+      .bubble {
+        width: 300px;
+        position: relative;
+        background-color: rgb(211, 239, 248);
+        border-radius: 15px;
+        padding: 0.7rem 1rem;
+        word-break: break-word;
+      }
+      .name {
+        font-size: 0.8rem;
+        color: #333;
+        margin: 0 10px 2px;
+      }
+      .user .bubble {
+        background-color: lightblue;
+      }
+      .user .name {
+        text-align: right;
+      }
+      .chat-container::-webkit-scrollbar {
+        background: #e9e9e9;
+      }
+      .chat-container::-webkit-scrollbar-thumb {
+        background: #c9daf1;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- div.chat-container>div.message.bot>div.avatar>div.name{myBot}+div.bubble{안녕하세요. 무엇을 도와드릴까요?}^^div.message.user>div>div.name{나}+div.bubble{Flex로 채팅화면을 만들 수 있나?} -->
+    <div class="chat-container">
+      <div class="message bot">
+        <div>
+          <div class="name">myBot</div>
+          <div class="bubble">안녕하세요! 무엇을 도와드릴까요?</div>
+        </div>
+      </div>
+      <div class="message user">
+        <div>
+          <div class="name">나</div>
+          <div class="bubble">Flex로 채팅 화면을 만들 수 있을까?</div>
+        </div>
+      </div>
+      <div class="message bot">
+        <div>
+          <div class="name">myBot</div>
+          <div class="bubble">
+            네! Flex를 사용하면 깔끔한 채팅 UI를 만들 수 있어요.
+          </div>
+        </div>
+      </div>
+      <div class="message user">
+        <div>
+          <div class="name">나</div>
+          <div class="bubble">그럼 어떻게 해야 해?</div>
+        </div>
+      </div>
+      <div class="message bot">
+        <div>
+          <div class="name">myBot</div>
+          <div class="bubble">
+            먼저 Flex 컨테이너를 만들고, 각 메시지를 정렬하는 방식으로 구현하면
+            돼요!
+          </div>
+        </div>
+      </div>
+      <div class="message user">
+        <div>
+          <div class="name">나</div>
+          <div class="bubble">코드 예시 좀 보여줄 수 있어?</div>
+        </div>
+      </div>
+      <div class="message bot">
+        <div>
+          <div class="name">myBot</div>
+          <div class="bubble">물론이죠! 간단한 코드 예제를 보여드릴게요.</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
