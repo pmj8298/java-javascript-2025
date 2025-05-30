@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이미지 슬라이더</title>
+    <style>
+      #container {
+        /* width: 100%; */
+        max-width: 300px;
+        border: 2px solid darkblue;
+        overflow: hidden;
+        border-radius: 20px;
+        position: relative;
+      }
+      .contents {
+        display: flex;
+        transition: 0.5s ease;
+      }
+      .contents img {
+        width: 310px;
+        object-fit: cover;
+      }
+      .controls {
+        display: flex;
+        justify-content: space-between;
+        width: 310px;
+      }
+      button {
+        background-color: lightblue;
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+        cursor: pointer;
+      }
+      button:disabled {
+        background-color: #ccc;
+        color: lightslategray;
+        cursor: not-allowed;
+      }
+      #tLeft,
+      #tRight {
+        width: 300px;
+        height: 100%;
+        background-color: lightblue;
+        position: absolute;
+        top: 0;
+      }
+      #tLeft {
+        background-color: rgba(240, 128, 128, 0.397);
+        left: 0;
+      }
+      #tRight {
+        background-color: rgba(144, 238, 144, 0.308);
+        right: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="" id="container">
+      <div class="contents" id="">
+        <!-- <img src="https://placecats.com/300/200" alt="" />
+        <img src="https://placecats.com/330/220" alt="" />
+        <img src="https://placecats.com/360/240" alt="" />
+        <img src="https://placecats.com/390/280" alt="" /> -->
+      </div>
+      <div id="tLeft"></div>
+      <div id="tRight"></div>
+    </div>
+    <!-- <div class="controls">
+      <button id="btn-left" onclick="sLeft()">이전</button>
+      <button id="btn-right" onclick="sRight()">다음</button>
+    </div> -->
+
+    <script>
+      const contents = document.querySelector(".contents");
+      for (let i = 0; i < 10; i++) {
+        const img = document.createElement("img");
+        contents.appendChild(img);
+        img.src = `https://placecats.com/3${i}0/200`;
+        contents.appendChild(img);
+      }
+      const img = document.querySelectorAll("img");
+      // const btnLeft = document.getElementById("btn-left");
+      // const btnRight = document.getElementById("btn-right");
+      const tLeft = document.getElementById("tLeft");
+      const tRight = document.getElementById("tRight");
+
+      const positions = [];
+
+      let imgOn = 0;
+      window.addEventListener("load", () => {
+        let pos = 0;
+        img.forEach((v, i) => {
+          positions.push(pos);
+          pos += v.offsetWidth;
+        });
+        console.log(positions);
+        // updateBtn();
+      });
+      const sLeft = () => {
+        if (imgOn > 0) {
+          imgOn--;
+          console.log(positions[imgOn]);
+          contents.style.transform = `translateX(-${positions[imgOn]}px)`;
+        }
+        // updateBtn();
+      };
+      const sRight = () => {
+        if (imgOn < positions.length - 1) {
+          imgOn++;
+          console.log(positions[imgOn]);
+          contents.style.transform = `translateX(-${positions[imgOn]}px)`;
+        }
+        updateBtn();
+      };
+
+      // const updateBtn = () => {
+      //   btnLeft.disabled = imgOn === 0;
+      //   btnRight.disabled = imgOn === positions.length - 1;
+      // };
+
+      tLeft.addEventListener("click", sLeft);
+      tRight.addEventListener("click", sRight);
+    </script>
+  </body>
+</html>
